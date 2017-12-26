@@ -12,10 +12,20 @@ public class PlayerController : MonoBehaviour
 	//Player Factors
 	[Range(1,20)]
 	public float playerSpeed;
-	[Range(100,500)]
+	
+	[Range(0,500)]
 	public float playerJumpForce;
+	
+	[Range(1,20)]
+	public float fallMultiplier;
+	
+	[Range(1,20)]
+	public float lowJumpMultiplier;
+	
 	private bool isFacingRight;
 	private bool canJump;
+	
+	[Range(10,50)]
 	public float fireballSpeed;
 	
 	//Projectile
@@ -25,7 +35,7 @@ public class PlayerController : MonoBehaviour
 	private bool firstJump;
 	private bool secondJump;
 
-	void Start ()
+	void Awake ()
 	{
 		rb = GetComponent<Rigidbody2D>();
 		isFacingRight = true;
@@ -52,6 +62,9 @@ public class PlayerController : MonoBehaviour
 		{
 			Reflect();
 		}
+		
+		//Handle Fall Multiplier (for weighter/tighter jumps)
+		FallingMultiplier();
 	}
 
 	void Move()
@@ -91,6 +104,18 @@ public class PlayerController : MonoBehaviour
 		canJump = false;
 		Vector2 movement = Vector2.up * playerJumpForce;
 		rb.AddForce(movement * playerSpeed);
+	}
+
+	void FallingMultiplier()
+	{
+		if (rb.velocity.y < 0)
+		{
+			rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+			// -1 accounts for normal unity gravity
+		} else if (rb.velocity.y > 0 && ! Input.GetKey(KeyCode.Space))
+		{
+			rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+		}
 	}
 
 	void Fire()

@@ -342,7 +342,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 4
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -385,8 +385,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireSpawnPoint: {fileID: 748056029}
-  playerSpeed: 5
-  playerJumpForce: 200
+  playerSpeed: 10
+  playerJumpForce: 70
+  fallMultiplier: 10
+  lowJumpMultiplier: 4
   fireballSpeed: 15
   fireballPrefab: {fileID: 1835174685048794, guid: 0c07282c809744768bacd16e5db7dc3d,
     type: 2}
