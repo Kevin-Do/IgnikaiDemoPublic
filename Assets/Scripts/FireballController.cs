@@ -10,6 +10,7 @@ public class FireballController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		//Z axis Rotation * Speed * Time
 		transform.Rotate(Vector3.forward * spinSpeed * Time.deltaTime);
 	}
 }
