@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using NUnit.Framework.Internal;
 using UnityEngine;
+using UnityEngine.Experimental.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -53,7 +54,7 @@ public class PlayerController : MonoBehaviour
 		Move();
 		
 		//Handle Firing
-		if (Input.GetKeyDown(KeyCode.F))
+		if (Input.GetMouseButtonDown(0))
 		{
 			Fire();
 		}
@@ -120,13 +121,19 @@ public class PlayerController : MonoBehaviour
 
 	void Fire()
 	{
+		//Instaniate
 		var fireballInstance = (GameObject)Instantiate (
 			fireballPrefab,
 			fireSpawnPoint.position,
 			fireSpawnPoint.rotation);
+		
+		//Mouse Aim	
+		Vector3 fireDirection =
+			Vector3.Normalize(Camera.main.ScreenToWorldPoint(Input.mousePosition) - fireballInstance.transform.position);
+		
+		Debug.Log(fireDirection);
 
-		// Add velocity to the bullet
-		fireballInstance.GetComponent<Rigidbody2D>().velocity = Vector2.right * fireballSpeed;
+		fireballInstance.GetComponent<Rigidbody2D>().velocity = fireDirection* fireballSpeed;
 
 		// Destroy the bullet after 2 seconds
 		Destroy(fireballInstance, 2.0f);
