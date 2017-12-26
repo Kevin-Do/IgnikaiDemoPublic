@@ -1,17 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using NUnit.Framework.Internal;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
 	//Player Components
 	private Rigidbody2D rb;
-	private Collider2D coll;
 	public Transform fireSpawnPoint;
-	// Should we make spawn point a GetComponent because all we need is the child transform?
 	
 	//Player Factors
+	[Range(1,20)]
 	public float playerSpeed;
+	[Range(100,500)]
 	public float playerJumpForce;
 	private bool isFacingRight;
 	private bool canJump;
@@ -27,8 +28,6 @@ public class PlayerController : MonoBehaviour
 	void Start ()
 	{
 		rb = GetComponent<Rigidbody2D>();
-		coll = GetComponent<Collider2D>();
-		canJump = false;
 		isFacingRight = true;
 	}
 
@@ -41,15 +40,40 @@ public class PlayerController : MonoBehaviour
 		}
 		
 		//Handle Movement
-		float moveHorizontal = Input.GetAxis("Horizontal");
-		isFacingRight = moveHorizontal > 0 ? true : false;
-		rb.velocity = new Vector2(moveHorizontal * playerSpeed, rb.velocity.y);
+		Move();
 		
 		//Handle Firing
 		if (Input.GetKeyDown(KeyCode.F))
 		{
 			Fire();
 		}
+
+		if (Input.GetKeyDown(KeyCode.R))
+		{
+			Reflect();
+		}
+	}
+
+	void Move()
+	{
+		float moveHorizontal = Input.GetAxis("Horizontal");
+		rb.velocity = new Vector2(moveHorizontal * playerSpeed, rb.velocity.y);
+		
+		//Handle facing left/right
+		// If Moving Right and Not Oriented towards right and vice versa
+		if (moveHorizontal > 0 && !isFacingRight || moveHorizontal < 0 && isFacingRight)
+		{
+			Flip();
+		}
+	}
+
+	void Flip()
+	{
+		//Change Direction
+		isFacingRight = !isFacingRight;
+		Vector3 currentScale = transform.localScale;
+		currentScale.x *= -1;
+		transform.localScale = currentScale;
 	}
 	
 	
@@ -58,14 +82,12 @@ public class PlayerController : MonoBehaviour
 		if (other.gameObject.tag == "Floor")
 		{
 			canJump = true;
-			Debug.Log("Touching Ground");
 		}
 	}
 	
 	
 	void Jump()
 	{
-		Debug.Log("Left Ground");
 		canJump = false;
 		Vector2 movement = Vector2.up * playerJumpForce;
 		rb.AddForce(movement * playerSpeed);
@@ -79,9 +101,14 @@ public class PlayerController : MonoBehaviour
 			fireSpawnPoint.rotation);
 
 		// Add velocity to the bullet
-		fireballInstance.GetComponent<Rigidbody2D>().velocity = fireballInstance.transform.forward * fireballSpeed;
+		fireballInstance.GetComponent<Rigidbody2D>().velocity = Vector2.right * fireballSpeed;
 
 		// Destroy the bullet after 2 seconds
 		Destroy(fireballInstance, 2.0f);
+	}
+
+	void Reflect()
+	{
+		
 	}
 }
