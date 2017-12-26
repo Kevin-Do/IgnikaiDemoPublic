@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 	//Player Components
 	private Rigidbody2D rb;
 	public Transform fireSpawnPoint;
+	public GameObject ReflectionCollider;
 	
 	//Player Factors
 	[Range(1,20)]
@@ -52,6 +53,16 @@ public class PlayerController : MonoBehaviour
 		
 		//Handle Movement
 		Move();
+		
+		//Handle Reflections
+		if (Input.GetMouseButton(1))
+		{
+			ReflectionCollider.SetActive(true);
+		}
+		else
+		{
+			ReflectionCollider.SetActive(false);
+		}
 		
 		//Handle Firing
 		if (Input.GetMouseButtonDown(0))
@@ -128,12 +139,11 @@ public class PlayerController : MonoBehaviour
 			fireSpawnPoint.rotation);
 		
 		//Mouse Aim	
-		Vector3 fireDirection =
-			Vector3.Normalize(Camera.main.ScreenToWorldPoint(Input.mousePosition) - fireballInstance.transform.position);
+		Vector3 fireDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - fireballInstance.transform.position).normalized;
 		
 		Debug.Log(fireDirection);
 
-		fireballInstance.GetComponent<Rigidbody2D>().velocity = fireDirection* fireballSpeed;
+		fireballInstance.GetComponent<Rigidbody2D>().velocity = fireDirection * fireballSpeed;
 
 		// Destroy the bullet after 2 seconds
 		Destroy(fireballInstance, 2.0f);

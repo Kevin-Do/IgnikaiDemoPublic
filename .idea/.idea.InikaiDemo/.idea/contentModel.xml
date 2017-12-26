@@ -13,6 +13,7 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="FireballController.cs" t="Include" />
           <e p="FireballSimulator.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="ReflectionPower.cs" t="Include" />

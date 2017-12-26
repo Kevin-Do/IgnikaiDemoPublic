@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4498169413557470}
   - component: {fileID: 212140230372004750}
   - component: {fileID: 61003266870152276}
+  - component: {fileID: 114163907119921226}
   - component: {fileID: 50005758374008220}
   m_Layer: 0
   m_Name: test_Fireball
@@ -87,6 +88,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &114163907119921226
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1835174685048794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed7cc1d7eba34b17be5655c621f66a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spinSpeed: 1000
 --- !u!212 &212140230372004750
 SpriteRenderer:
   m_ObjectHideFlags: 1
