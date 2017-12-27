@@ -34,9 +34,12 @@ public class PlayerController : MonoBehaviour
 	public GameObject fireballPrefab;
 	
 	//TODO:
-	private bool firstJump;
-	private bool secondJump;
-
+	public int jumpCount = 0;
+    public int jumpLimit = 1;
+	
+	/* private bool firstJump;
+	*  private bool secondJump;
+	*/
 	void Awake ()
 	{
 		rb = GetComponent<Rigidbody2D>();
@@ -45,11 +48,18 @@ public class PlayerController : MonoBehaviour
 
 	void Update()
 	{
+		//Handle Jumping (Double Jump)
+		if (Input.GetButtonDown("Jump") && jumpCount < jumpLimit && canJump)
+        {
+            jumpCount++;
+            Jump();
+        }
+		
 		//Handle Jump
-		if (Input.GetKeyDown(KeyCode.Space) && canJump)
+		/* if (Input.GetKeyDown(KeyCode.Space) && canJump)
 		{
 			Jump();
-		}
+		} */
 		
 		//Handle Movement
 		Move();
@@ -101,19 +111,28 @@ public class PlayerController : MonoBehaviour
 		transform.localScale = currentScale;
 	}
 	
-	
-	void OnCollisionEnter2D (Collision2D other) 
+	//Obsolete?
+	/* void OnCollisionEnter2D (Collision2D other) 
 	{
 		if (other.gameObject.tag == "Floor")
 		{
 			canJump = true;
 		}
-	}
+	} */
 	
+	/**
+     * Checks if the rigid body is in contact with the floor once per frame.
+     */
+    void OnCollisionStay2D(Collision2D col)
+    {
+		if (col.gameObject.tag == "Floor") {
+			canJump = true;
+			jumpCount = 0;
+		}
+	}
 	
 	void Jump()
 	{
-		canJump = false;
 		Vector2 movement = Vector2.up * playerJumpForce;
 		rb.AddForce(movement * playerSpeed);
 	}
