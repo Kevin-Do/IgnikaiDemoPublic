@@ -12,6 +12,7 @@ public class Network : MonoBehaviour {
 		socket = GetComponent<SocketIOComponent>();
 		socket.On("open", OnConnected);
 		socket.On("spawn", OnSpawned);
+		socket.On("move", OnMove);
 	}
 
 	void OnConnected(SocketIOEvent e)
@@ -23,7 +24,13 @@ public class Network : MonoBehaviour {
 	{
 		Debug.Log("Spawned");
 		Instantiate(playerPrefab);
-
 	}
+
+	void OnMove(SocketIOEvent e)
+	{
+		Debug.Log("Player is moving: " + e.data);
+	}
+	
+	
 	
 }

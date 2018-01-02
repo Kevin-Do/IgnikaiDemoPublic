@@ -20,8 +20,14 @@ public class NetworkMove : MonoBehaviour
 		if (currentPosition != transform.position)
 		{
 			currentPosition = transform.position;
-			Debug.Log("Sending new position to node server: " + transform.position);
-			socket.Emit("move");
+			Debug.Log("Sending new position to node server: " + VectorToJson(transform.position));
+			socket.Emit("move", new JSONObject(VectorToJson(transform.position)));
 		}
+	}
+
+	public string VectorToJson(Vector3 vector)
+	{
+		//Can use serialize library
+		return string.Format(@" {{""x"": ""{0}"", ""y"":""{1}""}} ", vector.x, vector.y);
 	}
 }
