@@ -14,17 +14,16 @@ public class Network : MonoBehaviour {
 		socket.On("spawn", OnSpawned);
 	}
 
+	void OnConnected(SocketIOEvent e)
+	{
+		Debug.Log("Connected");
+	}
+	
 	void OnSpawned(SocketIOEvent e)
 	{
 		Debug.Log("Spawned");
 		Instantiate(playerPrefab);
 
-	}
-
-	void OnConnected(SocketIOEvent e)
-	{
-		Debug.Log("Connected");
-		socket.Emit("move");
 	}
 	
 }

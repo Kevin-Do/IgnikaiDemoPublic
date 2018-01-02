@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 61005324841879522}
   - component: {fileID: 50647653025258130}
   - component: {fileID: 114737760221639516}
+  - component: {fileID: 114950959053624398}
   m_Layer: 0
   m_Name: Test Player
   m_TagString: Player
@@ -207,6 +208,18 @@ MonoBehaviour:
     type: 2}
   jumpCount: 0
   jumpLimit: 1
+--- !u!114 &114950959053624398
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1243459632471958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e44dee9032ec4f3e860902670e1d244, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  socket: {fileID: 0}
 --- !u!212 &212312165722646232
 SpriteRenderer:
   m_ObjectHideFlags: 1

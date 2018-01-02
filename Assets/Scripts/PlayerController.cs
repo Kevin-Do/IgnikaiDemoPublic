@@ -32,6 +32,9 @@ public class PlayerController : MonoBehaviour
 
 	//Projectile
 	public GameObject fireballPrefab;
+	
+	//Network Components
+	private NetworkMove netMove;
 
 	//TODO:
 	public int jumpCount = 0;
@@ -44,6 +47,7 @@ public class PlayerController : MonoBehaviour
 	{
 		rb = GetComponent<Rigidbody2D>();
 		isFacingRight = true;
+		netMove = GetComponent<NetworkMove>();
 	}
 
 	void Update()
@@ -95,6 +99,9 @@ public class PlayerController : MonoBehaviour
 		{
 			Flip();
 		}
+
+		//Send new position
+		netMove.OnMove();
 	}
 
 	void Flip()
