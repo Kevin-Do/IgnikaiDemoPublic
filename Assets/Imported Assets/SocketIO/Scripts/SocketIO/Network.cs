@@ -3,11 +3,11 @@ using UnityEngine;
 using SocketIO;
 
 public class Network : MonoBehaviour {
-    
-    static SocketIOComponent socket;
+
+  static SocketIOComponent socket;
 	public GameObject playerPrefab;
 	Dictionary<string, GameObject> playersDict;
-    
+
 	// Use this for initialization
 	void Start () {
 		socket = GetComponent<SocketIOComponent>();
@@ -23,7 +23,7 @@ public class Network : MonoBehaviour {
 	{
 		Debug.Log("Connected");
 	}
-	
+
 	void OnSpawned(SocketIOEvent e)
 	{
 		Debug.Log("Spawned: " + e.data);
@@ -36,17 +36,18 @@ public class Network : MonoBehaviour {
 	{
 		var positionX = GetFloatFromJson(e.data, "x");
 		var positionY = GetFloatFromJson(e.data, "y");
-		
+    var localScaleX = GetFloatFromJson(e.data, "localScale.x");
+
 		Vector3 newPosition = new Vector3(positionX, positionY, 0);
-		
+
 		var playerId = e.data["id"].ToString();
 		//Debug.Log("Player ID: " + e.data["id"] + " inputted " + e.data["moveHorizontal"]);
-		
+
 		//Get associated player from dict
 		var movingPlayer = playersDict[playerId];
 		//Send movement data to player
 		var playerController = movingPlayer.GetComponent<PlayerController>();
-		playerController.NetworkMove(newPosition);
+		playerController.NetworkMove(newPosition, localScaleX);
 	}
 
 	float GetFloatFromJson(JSONObject data, string key)

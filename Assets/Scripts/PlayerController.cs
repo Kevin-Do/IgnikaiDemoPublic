@@ -16,13 +16,12 @@ public class PlayerController : MonoBehaviour
 	public float playerJumpForce;
 	public float fallMultiplier;
 	public float lowJumpMultiplier;
-	private bool isFacingRight;
 	private bool canJump;
 	public float fireballSpeed;
 
 	//Projectile
 	public GameObject fireballPrefab;
-	
+
 	//Network Components
 	private NetworkMove netMove;
 
@@ -36,7 +35,6 @@ public class PlayerController : MonoBehaviour
 	void Awake ()
 	{
 		rb = GetComponent<Rigidbody2D>();
-		isFacingRight = true;
 		netMove = GetComponent<NetworkMove>();
 	}
 
@@ -71,7 +69,7 @@ public class PlayerController : MonoBehaviour
 			Fire();
 		}
 	}
-	
+
 	//NORMAL MOVE()
 	public void Move()
 	{
@@ -79,25 +77,28 @@ public class PlayerController : MonoBehaviour
 		rb.velocity = new Vector2(moveHorizontal * playerSpeed, rb.velocity.y);
 
 		//Handle facing left/right
-		if ((moveHorizontal < 0) == isFacingRight)
+		if (moveHorizontal != 0 && (moveHorizontal < 0) != transform.localScale.x < 0)
 		{
 			Flip();
 		}
 
 		//Send new position
-		netMove.OnMove(transform.position);
+		netMove.OnMove(transform);
 	}
-	
+
 	//NETWORK MOVE OVERRIDE
-	public void NetworkMove(Vector3 newPosition)
+	public void NetworkMove(Vector3 newPosition, float localScaleX)
 	{
 		transform.position = newPosition;
+		Vector3 currentScale = transform.localScale;
+		currentScale.x = localScaleX;;
+		transform.localScale = currentScale;
 	}
 
 	void Flip()
 	{
 		//Change Direction
-		isFacingRight = !isFacingRight;
+
 		Vector3 currentScale = transform.localScale;
 		currentScale.x *= -1;
 		transform.localScale = currentScale;
