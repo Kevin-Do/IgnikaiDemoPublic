@@ -85,22 +85,13 @@ public class PlayerController : MonoBehaviour
 		}
 
 		//Send new position
-		netMove.OnMove(moveHorizontal);
+		netMove.OnMove(transform.position);
 	}
 	
 	//NETWORK MOVE OVERRIDE
-	public void Move(float moveHorizontal)
+	public void NetworkMove(Vector3 newPosition)
 	{
-		rb.velocity = new Vector2(moveHorizontal * playerSpeed, rb.velocity.y);
-
-		//Handle facing left/right
-		if ((moveHorizontal < 0) == isFacingRight)
-		{
-			Flip();
-		}
-
-		//Send new position
-		netMove.OnMove(moveHorizontal);
+		transform.position = newPosition;
 	}
 
 	void Flip()
