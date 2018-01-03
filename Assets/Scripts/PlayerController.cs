@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using NUnit.Framework.Internal;
+//using NUnit.Framework.Internal;
 using UnityEngine;
 using UnityEngine.Experimental.UIElements;
 
@@ -12,26 +12,19 @@ public class PlayerController : MonoBehaviour
 	public GameObject ReflectionCollider;
 
 	//Player Factors
-	[Range(1,20)]
 	public float playerSpeed;
-
-	[Range(0,500)]
 	public float playerJumpForce;
-
-	[Range(1,20)]
 	public float fallMultiplier;
-
-	[Range(1,20)]
 	public float lowJumpMultiplier;
-
 	private bool isFacingRight;
 	private bool canJump;
-
-	[Range(10,50)]
 	public float fireballSpeed;
 
 	//Projectile
 	public GameObject fireballPrefab;
+	
+	//Network Components
+	private NetworkMove netMove;
 
 	//TODO:
 	public int jumpCount = 0;
@@ -44,6 +37,7 @@ public class PlayerController : MonoBehaviour
 	{
 		rb = GetComponent<Rigidbody2D>();
 		isFacingRight = true;
+		netMove = GetComponent<NetworkMove>();
 	}
 
 	void Update()
@@ -76,16 +70,10 @@ public class PlayerController : MonoBehaviour
 		{
 			Fire();
 		}
-
-		if (Input.GetKeyDown(KeyCode.R))
-		{
-			Reflect();
-		}
-
-
 	}
-
-	void Move()
+	
+	//NORMAL MOVE()
+	public void Move()
 	{
 		float moveHorizontal = Input.GetAxis("Horizontal");
 		rb.velocity = new Vector2(moveHorizontal * playerSpeed, rb.velocity.y);
@@ -95,6 +83,15 @@ public class PlayerController : MonoBehaviour
 		{
 			Flip();
 		}
+
+		//Send new position
+		netMove.OnMove(transform.position);
+	}
+	
+	//NETWORK MOVE OVERRIDE
+	public void NetworkMove(Vector3 newPosition)
+	{
+		transform.position = newPosition;
 	}
 
 	void Flip()
@@ -151,8 +148,4 @@ public class PlayerController : MonoBehaviour
 		Destroy(fireballInstance, 2.0f);
 	}
 
-	void Reflect()
-	{
-
-	}
 }
