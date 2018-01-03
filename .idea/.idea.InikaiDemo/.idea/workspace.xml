@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9681cee-4c8d-4ba2-9400-5179aa7dbe12" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NodeClientTest.app/Contents/Resources/Data/Managed/Assembly-CSharp.dll" afterPath="$PROJECT_DIR$/NodeClientTest.app/Contents/Resources/Data/Managed/Assembly-CSharp.dll" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NodeClientTest.app/Contents/Resources/Data/globalgamemanagers" afterPath="$PROJECT_DIR$/NodeClientTest.app/Contents/Resources/Data/globalgamemanagers" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NodeClientTest.app/Contents/Resources/Data/level0" afterPath="$PROJECT_DIR$/NodeClientTest.app/Contents/Resources/Data/level0" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NodeClientTest.app/Contents/Resources/Data/sharedassets0.assets" afterPath="$PROJECT_DIR$/NodeClientTest.app/Contents/Resources/Data/sharedassets0.assets" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.InikaiDemo/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.InikaiDemo/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Imported Assets/SocketIO/Scripts/SocketIO/Network.cs" afterPath="$PROJECT_DIR$/Assets/Imported Assets/SocketIO/Scripts/SocketIO/Network.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Prefabs/Test Player.prefab" afterPath="$PROJECT_DIR$/Assets/Prefabs/Test Player.prefab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Prefabs/Test Player.prefab.meta" afterPath="$PROJECT_DIR$/Assets/Prefabs/Test Player.prefab.meta" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scripts/NetworkMove.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/NetworkMove.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,70 +26,78 @@
       <file leaf-file-name="PlayerController.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="103" column="23" lean-forward="false" selection-start-line="103" selection-start-column="23" selection-end-line="103" selection-end-column="23" />
+            <state relative-caret-position="645">
+              <caret line="144" column="21" lean-forward="false" selection-start-line="144" selection-start-column="16" selection-end-line="144" selection-end-column="21" />
               <folding>
-                <marker date="1514879329197" expanded="true" signature="6:155" ph="..." />
-                <marker date="1514879329197" expanded="true" signature="202:3172" ph="{...}" />
-                <marker date="1514879329197" expanded="true" signature="800:859" ph="/* private bool firstJump; ... */" />
-                <marker date="1514879329197" expanded="true" signature="874:981" ph="{...}" />
-                <marker date="1514879329197" expanded="true" signature="997:1573" ph="{...}" />
-                <marker date="1514879329197" expanded="true" signature="1104:1169" ph="{...}" />
-                <marker date="1514879329197" expanded="true" signature="1335:1382" ph="{...}" />
-                <marker date="1514879329197" expanded="true" signature="1389:1437" ph="{...}" />
-                <marker date="1514879329197" expanded="true" signature="1491:1510" ph="{...}" />
-                <marker date="1514879329197" expanded="true" signature="1546:1568" ph="{...}" />
-                <marker date="1514879329197" expanded="true" signature="1587:1858" ph="{...}" />
-                <marker date="1514879329197" expanded="true" signature="1793:1812" ph="{...}" />
-                <marker date="1514879329197" expanded="true" signature="1872:2043" ph="{...}" />
-                <marker date="1514879329197" expanded="true" signature="2046:2134" ph="/* Checks if the rigid body is in contact with the floor once per frame. ... */" />
-                <marker date="1514879329197" expanded="true" signature="2178:2267" ph="{...}" />
-                <marker date="1514879329197" expanded="true" signature="2222:2264" ph="{...}" />
-                <marker date="1514879329197" expanded="true" signature="2281:2434" ph="{...}" />
-                <marker date="1514879329197" expanded="true" signature="2461:2625" ph="{...}" />
-                <marker date="1514879329197" expanded="true" signature="2522:2622" ph="{...}" />
-                <marker date="1514879329197" expanded="true" signature="2639:3146" ph="{...}" />
-                <marker date="1514879329197" expanded="true" signature="3163:3170" ph="{...}" />
+                <marker date="1514942484845" expanded="true" signature="6:155" ph="..." />
+                <marker date="1514942484845" expanded="true" signature="202:3344" ph="{...}" />
+                <marker date="1514942484845" expanded="true" signature="718:777" ph="/* private bool firstJump; ... */" />
+                <marker date="1514942484845" expanded="true" signature="792:899" ph="{...}" />
+                <marker date="1514942484845" expanded="true" signature="915:1431" ph="{...}" />
+                <marker date="1514942484845" expanded="true" signature="1022:1087" ph="{...}" />
+                <marker date="1514942484845" expanded="true" signature="1253:1300" ph="{...}" />
+                <marker date="1514942484845" expanded="true" signature="1307:1355" ph="{...}" />
+                <marker date="1514942484845" expanded="true" signature="1409:1428" ph="{...}" />
+                <marker date="1514942484845" expanded="true" signature="1470:1755" ph="{...}" />
+                <marker date="1514942484845" expanded="true" signature="1676:1695" ph="{...}" />
+                <marker date="1514942484845" expanded="true" signature="1822:2053" ph="{...}" />
+                <marker date="1514942484845" expanded="true" signature="1974:1993" ph="{...}" />
+                <marker date="1514942484845" expanded="true" signature="2067:2238" ph="{...}" />
+                <marker date="1514942484845" expanded="true" signature="2241:2329" ph="/* Checks if the rigid body is in contact with the floor once per frame. ... */" />
+                <marker date="1514942484845" expanded="true" signature="2373:2462" ph="{...}" />
+                <marker date="1514942484845" expanded="true" signature="2417:2459" ph="{...}" />
+                <marker date="1514942484845" expanded="true" signature="2476:2629" ph="{...}" />
+                <marker date="1514942484845" expanded="true" signature="2656:2820" ph="{...}" />
+                <marker date="1514942484845" expanded="true" signature="2717:2817" ph="{...}" />
+                <marker date="1514942484845" expanded="true" signature="2834:3341" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Network.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Network.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Imported Assets/SocketIO/Scripts/SocketIO/Network.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state relative-caret-position="210">
+              <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="24" />
               <folding>
-                <marker date="1514887974974" expanded="true" signature="6:60" ph="..." />
-                <marker date="1514887974974" expanded="true" signature="99:625" ph="{...}" />
-                <marker date="1514887974974" expanded="true" signature="228:374" ph="{...}" />
-                <marker date="1514887974974" expanded="true" signature="410:442" ph="{...}" />
-                <marker date="1514887974974" expanded="true" signature="477:536" ph="{...}" />
-                <marker date="1514887974974" expanded="true" signature="567:617" ph="{...}" />
+                <marker date="1514943635414" expanded="true" signature="6:68" ph="..." />
+                <marker date="1514943635414" expanded="true" signature="107:1351" ph="{...}" />
+                <marker date="1514943635414" expanded="true" signature="280:520" ph="{...}" />
+                <marker date="1514943635414" expanded="true" signature="556:588" ph="{...}" />
+                <marker date="1514943635414" expanded="true" signature="623:819" ph="{...}" />
+                <marker date="1514943635414" expanded="true" signature="850:1063" ph="{...}" />
+                <marker date="1514943635414" expanded="true" signature="1117:1266" ph="{...}" />
+                <marker date="1514943635414" expanded="true" signature="1123:1202" ph="/* Parse websocket emit/broadcast data ... */" />
+                <marker date="1514943635414" expanded="true" signature="1303:1347" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NetworkMove.cs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="NetworkMove.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/NetworkMove.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="31" lean-forward="false" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+            <state relative-caret-position="330">
+              <caret line="22" column="51" lean-forward="true" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
               <folding>
-                <marker date="1514887724157" expanded="true" signature="6:94" ph="..." />
-                <marker date="1514887724157" expanded="true" signature="136:756" ph="{...}" />
-                <marker date="1514887724157" expanded="true" signature="229:275" ph="{...}" />
-                <marker date="1514887724157" expanded="true" signature="299:589" ph="{...}" />
-                <marker date="1514887724157" expanded="true" signature="373:586" ph="{...}" />
-                <marker date="1514887724157" expanded="true" signature="634:754" ph="{...}" />
+                <marker date="1514944700678" expanded="true" signature="6:94" ph="..." />
+                <marker date="1514944700678" expanded="true" signature="136:622" ph="{...}" />
+                <marker date="1514944700678" expanded="true" signature="175:275" ph="/* private static float cachedMoveHorizontal; ... */" />
+                <marker date="1514944700678" expanded="true" signature="290:338" ph="{...}" />
+                <marker date="1514944700678" expanded="true" signature="382:456" ph="{...}" />
+                <marker date="1514944700678" expanded="true" signature="506:620" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>spawn</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -101,8 +118,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/FireballController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ReflectionPower.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/NetworkMove.cs" />
         <option value="$PROJECT_DIR$/Assets/Imported Assets/SocketIO/Scripts/SocketIO/Network.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/NetworkMove.cs" />
       </list>
     </option>
   </component>
@@ -176,12 +193,12 @@
       <option name="presentableId" value="Default" />
       <updated>1514228019164</updated>
       <workItem from="1514228020920" duration="7584000" />
-      <workItem from="1514855364556" duration="3340000" />
+      <workItem from="1514855364556" duration="9183000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10924000" />
+    <option name="totallyTimeSpent" value="16767000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -234,27 +251,27 @@
         <state relative-caret-position="420">
           <caret line="28" column="4" lean-forward="false" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
           <folding>
-            <marker date="1514879329197" expanded="true" signature="6:155" ph="..." />
-            <marker date="1514879329197" expanded="true" signature="202:3172" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="800:859" ph="/* private bool firstJump; ... */" />
-            <marker date="1514879329197" expanded="true" signature="874:981" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="997:1573" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="1104:1169" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="1335:1382" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="1389:1437" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="1491:1510" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="1546:1568" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="1587:1858" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="1793:1812" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="1872:2043" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="2046:2134" ph="/* Checks if the rigid body is in contact with the floor once per frame. ... */" />
-            <marker date="1514879329197" expanded="true" signature="2178:2267" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="2222:2264" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="2281:2434" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="2461:2625" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="2522:2622" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="2639:3146" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="3163:3170" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="6:155" ph="..." />
+            <marker date="1514942484845" expanded="true" signature="202:3344" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="718:777" ph="/* private bool firstJump; ... */" />
+            <marker date="1514942484845" expanded="true" signature="792:899" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="915:1431" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="1022:1087" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="1253:1300" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="1307:1355" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="1409:1428" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="1470:1755" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="1676:1695" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="1822:2053" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="1974:1993" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="2067:2238" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="2241:2329" ph="/* Checks if the rigid body is in contact with the floor once per frame. ... */" />
+            <marker date="1514942484845" expanded="true" signature="2373:2462" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="2417:2459" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="2476:2629" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="2656:2820" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="2717:2817" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="2834:3341" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -409,60 +426,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="103" column="23" lean-forward="false" selection-start-line="103" selection-start-column="23" selection-end-line="103" selection-end-column="23" />
+        <state relative-caret-position="645">
+          <caret line="144" column="21" lean-forward="false" selection-start-line="144" selection-start-column="16" selection-end-line="144" selection-end-column="21" />
           <folding>
-            <marker date="1514879329197" expanded="true" signature="6:155" ph="..." />
-            <marker date="1514879329197" expanded="true" signature="202:3172" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="800:859" ph="/* private bool firstJump; ... */" />
-            <marker date="1514879329197" expanded="true" signature="874:981" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="997:1573" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="1104:1169" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="1335:1382" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="1389:1437" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="1491:1510" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="1546:1568" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="1587:1858" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="1793:1812" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="1872:2043" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="2046:2134" ph="/* Checks if the rigid body is in contact with the floor once per frame. ... */" />
-            <marker date="1514879329197" expanded="true" signature="2178:2267" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="2222:2264" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="2281:2434" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="2461:2625" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="2522:2622" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="2639:3146" ph="{...}" />
-            <marker date="1514879329197" expanded="true" signature="3163:3170" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/NetworkMove.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="31" lean-forward="false" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-          <folding>
-            <marker date="1514887724157" expanded="true" signature="6:94" ph="..." />
-            <marker date="1514887724157" expanded="true" signature="136:756" ph="{...}" />
-            <marker date="1514887724157" expanded="true" signature="229:275" ph="{...}" />
-            <marker date="1514887724157" expanded="true" signature="299:589" ph="{...}" />
-            <marker date="1514887724157" expanded="true" signature="373:586" ph="{...}" />
-            <marker date="1514887724157" expanded="true" signature="634:754" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="6:155" ph="..." />
+            <marker date="1514942484845" expanded="true" signature="202:3344" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="718:777" ph="/* private bool firstJump; ... */" />
+            <marker date="1514942484845" expanded="true" signature="792:899" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="915:1431" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="1022:1087" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="1253:1300" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="1307:1355" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="1409:1428" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="1470:1755" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="1676:1695" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="1822:2053" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="1974:1993" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="2067:2238" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="2241:2329" ph="/* Checks if the rigid body is in contact with the floor once per frame. ... */" />
+            <marker date="1514942484845" expanded="true" signature="2373:2462" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="2417:2459" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="2476:2629" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="2656:2820" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="2717:2817" ph="{...}" />
+            <marker date="1514942484845" expanded="true" signature="2834:3341" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Imported Assets/SocketIO/Scripts/SocketIO/Network.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="210">
+          <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="24" />
           <folding>
-            <marker date="1514887974974" expanded="true" signature="6:60" ph="..." />
-            <marker date="1514887974974" expanded="true" signature="99:625" ph="{...}" />
-            <marker date="1514887974974" expanded="true" signature="228:374" ph="{...}" />
-            <marker date="1514887974974" expanded="true" signature="410:442" ph="{...}" />
-            <marker date="1514887974974" expanded="true" signature="477:536" ph="{...}" />
-            <marker date="1514887974974" expanded="true" signature="567:617" ph="{...}" />
+            <marker date="1514943635414" expanded="true" signature="6:68" ph="..." />
+            <marker date="1514943635414" expanded="true" signature="107:1351" ph="{...}" />
+            <marker date="1514943635414" expanded="true" signature="280:520" ph="{...}" />
+            <marker date="1514943635414" expanded="true" signature="556:588" ph="{...}" />
+            <marker date="1514943635414" expanded="true" signature="623:819" ph="{...}" />
+            <marker date="1514943635414" expanded="true" signature="850:1063" ph="{...}" />
+            <marker date="1514943635414" expanded="true" signature="1117:1266" ph="{...}" />
+            <marker date="1514943635414" expanded="true" signature="1123:1202" ph="/* Parse websocket emit/broadcast data ... */" />
+            <marker date="1514943635414" expanded="true" signature="1303:1347" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/NetworkMove.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="51" lean-forward="true" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
+          <folding>
+            <marker date="1514944700678" expanded="true" signature="6:94" ph="..." />
+            <marker date="1514944700678" expanded="true" signature="136:622" ph="{...}" />
+            <marker date="1514944700678" expanded="true" signature="175:275" ph="/* private static float cachedMoveHorizontal; ... */" />
+            <marker date="1514944700678" expanded="true" signature="290:338" ph="{...}" />
+            <marker date="1514944700678" expanded="true" signature="382:456" ph="{...}" />
+            <marker date="1514944700678" expanded="true" signature="506:620" ph="{...}" />
           </folding>
         </state>
       </provider>

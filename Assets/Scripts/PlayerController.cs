@@ -12,22 +12,12 @@ public class PlayerController : MonoBehaviour
 	public GameObject ReflectionCollider;
 
 	//Player Factors
-	[Range(1,20)]
 	public float playerSpeed;
-
-	[Range(0,500)]
 	public float playerJumpForce;
-
-	[Range(1,20)]
 	public float fallMultiplier;
-
-	[Range(1,20)]
 	public float lowJumpMultiplier;
-
 	private bool isFacingRight;
 	private bool canJump;
-
-	[Range(10,50)]
 	public float fireballSpeed;
 
 	//Projectile
@@ -80,16 +70,10 @@ public class PlayerController : MonoBehaviour
 		{
 			Fire();
 		}
-
-		if (Input.GetKeyDown(KeyCode.R))
-		{
-			Reflect();
-		}
-
-
 	}
-
-	void Move()
+	
+	//NORMAL MOVE()
+	public void Move()
 	{
 		float moveHorizontal = Input.GetAxis("Horizontal");
 		rb.velocity = new Vector2(moveHorizontal * playerSpeed, rb.velocity.y);
@@ -101,7 +85,22 @@ public class PlayerController : MonoBehaviour
 		}
 
 		//Send new position
-		netMove.OnMove();
+		netMove.OnMove(moveHorizontal);
+	}
+	
+	//NETWORK MOVE OVERRIDE
+	public void Move(float moveHorizontal)
+	{
+		rb.velocity = new Vector2(moveHorizontal * playerSpeed, rb.velocity.y);
+
+		//Handle facing left/right
+		if ((moveHorizontal < 0) == isFacingRight)
+		{
+			Flip();
+		}
+
+		//Send new position
+		netMove.OnMove(moveHorizontal);
 	}
 
 	void Flip()
@@ -158,8 +157,4 @@ public class PlayerController : MonoBehaviour
 		Destroy(fireballInstance, 2.0f);
 	}
 
-	void Reflect()
-	{
-
-	}
 }

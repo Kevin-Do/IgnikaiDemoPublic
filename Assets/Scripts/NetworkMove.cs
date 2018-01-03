@@ -7,27 +7,22 @@ public class NetworkMove : MonoBehaviour
 {
 
 	public SocketIOComponent socket;
-	private static Vector3 currentPosition;
+	//private static float cachedMoveHorizontal;
+	//TODO: Make sending Input more efmoveHorizontalficent
 
 	void Start()
 	{
-		currentPosition = transform.position;
+		//currentPosition = transform.position;
 	}
 	
-	public void OnMove()
+	public void OnMove(float moveHorizontal)
 	{
-		//Send position to Node
-		if (currentPosition != transform.position)
-		{
-			currentPosition = transform.position;
-			Debug.Log("Sending new position to node server: " + VectorToJson(transform.position));
-			socket.Emit("move", new JSONObject(VectorToJson(transform.position)));
-		}
+		socket.Emit("move", new JSONObject(floatToJSON(moveHorizontal)));
 	}
 
-	public string VectorToJson(Vector3 vector)
+	public string floatToJSON(float moveHorizontal)
 	{
 		//Can use serialize library
-		return string.Format(@" {{""x"": ""{0}"", ""y"":""{1}""}} ", vector.x, vector.y);
+		return string.Format(@" {{""moveHorizontal"": ""{0}""}} ", moveHorizontal);
 	}
 }
