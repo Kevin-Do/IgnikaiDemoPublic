@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
 	public float lowJumpMultiplier;
 	private bool canJump;
 	public float fireballSpeed;
+	public bool isLocalPlayer = true;
 
 	//Projectile
 	public GameObject fireballPrefab;
@@ -40,6 +41,11 @@ public class PlayerController : MonoBehaviour
 
 	void Update()
 	{
+		if (!isLocalPlayer)
+		{
+			return;
+			
+		}
 		//Handle Jumping (Double Jump)
 		if (Input.GetButtonDown("Jump") && jumpCount < jumpLimit && canJump)
         {
@@ -73,7 +79,7 @@ public class PlayerController : MonoBehaviour
 	//NORMAL MOVE()
 	public void Move()
 	{
-		float moveHorizontal = Input.GetAxis("Horizontal");
+		float moveHorizontal = Input.GetAxisRaw("Horizontal");
 		rb.velocity = new Vector2(moveHorizontal * playerSpeed, rb.velocity.y);
 
 		//Handle facing left/right

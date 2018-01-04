@@ -28,7 +28,11 @@ public class Network : MonoBehaviour {
 	{
 		Debug.Log("Spawned: " + e.data);
 		var newPlayer = Instantiate(playerPrefab);
-		playersDict.Add(e.data["id"].ToString(), newPlayer);
+		var playerController = newPlayer.GetComponent<PlayerController>();
+		playerController.isLocalPlayer = false;
+		var playerId = e.data["id"].ToString();
+		playersDict.Add(playerId, newPlayer);
+		Debug.Log("Player Joined with player ID: " + playerId);
 		Debug.Log("Player Count: " + playersDict.Count);
 	}
 
@@ -36,17 +40,18 @@ public class Network : MonoBehaviour {
 	{
 		var positionX = GetFloatFromJson(e.data, "x");
 		var positionY = GetFloatFromJson(e.data, "y");
-    var localScaleX = GetFloatFromJson(e.data, "localScale.x");
+    	var localScaleX = GetFloatFromJson(e.data, "localScale.x");
 
-		Vector3 newPosition = new Vector3(positionX, positionY, 0);
+		var newPosition = new Vector3(positionX, positionY, 0);
 
 		var playerId = e.data["id"].ToString();
-		//Debug.Log("Player ID: " + e.data["id"] + " inputted " + e.data["moveHorizontal"]);
-
+		
 		//Get associated player from dict
 		var movingPlayer = playersDict[playerId];
+		
 		//Send movement data to player
 		var playerController = movingPlayer.GetComponent<PlayerController>();
+		
 		playerController.NetworkMove(newPosition, localScaleX);
 	}
 

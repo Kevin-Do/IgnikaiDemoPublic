@@ -84,7 +84,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1428267995777382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 3.62, y: -1.88, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 4426960874059532}
@@ -193,6 +193,7 @@ MonoBehaviour:
   fallMultiplier: 1
   lowJumpMultiplier: 20
   fireballSpeed: 15
+  isLocalPlayer: 1
   fireballPrefab: {fileID: 1835174685048794, guid: 0c07282c809744768bacd16e5db7dc3d,
     type: 2}
   jumpCount: 0
