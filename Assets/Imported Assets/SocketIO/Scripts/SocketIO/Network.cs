@@ -19,25 +19,24 @@ public class Network : MonoBehaviour {
 		playersDict = new Dictionary<string, GameObject>();
 	}
 
-	void OnConnected(SocketIOEvent e)
-	{
+	void OnConnected(SocketIOEvent e) {
 		Debug.Log("Connected");
 	}
 
-	void OnSpawned(SocketIOEvent e)
-	{
+	void OnSpawned(SocketIOEvent e) {
 		Debug.Log("Spawned: " + e.data);
+
 		var newPlayer = Instantiate(playerPrefab);
 		var playerController = newPlayer.GetComponent<PlayerController>();
 		playerController.isLocalPlayer = false;
 		var playerId = e.data["id"].ToString();
 		playersDict.Add(playerId, newPlayer);
+
 		Debug.Log("Player Joined with player ID: " + playerId);
 		Debug.Log("Player Count: " + playersDict.Count);
 	}
 
-	void OnMove(SocketIOEvent e)
-	{
+	void OnMove(SocketIOEvent e) {
 		var positionX = GetFloatFromJson(e.data, "x");
 		var positionY = GetFloatFromJson(e.data, "y");
     	var localScaleX = GetFloatFromJson(e.data, "localScale.x");
@@ -55,20 +54,17 @@ public class Network : MonoBehaviour {
 		playerController.NetworkMove(newPosition, localScaleX);
 	}
 
-	float GetFloatFromJson(JSONObject data, string key)
-	{
+	float GetFloatFromJson(JSONObject data, string key) {
 		//Parse websocket emit/broadcast data
 		//JSON -> String -> Replace "" -> Float
 		return float.Parse(data[key].ToString().Replace("\"",""));
 	}
 
-	void OnRegistered(SocketIOEvent e)
-	{
+	void OnRegistered(SocketIOEvent e) {
 		Debug.Log("Registered: " + e.data);
 	}
 
-	void OnDisconnected(SocketIOEvent e)
-	{
+	void OnDisconnected(SocketIOEvent e) {
 		var id = e.data["id"].ToString();
 		var disconnectedPlayer = playersDict[id];
 		Destroy(disconnectedPlayer);
