@@ -1,0 +1,12 @@
+The comprehensive list of controls and minimal state representation of the game
+
+move left  ......... left arrow
+move right ......... right arrow
+jump ............... space
+aim x .............. aim x
+aim y .............. aim y
+fire ............... left click
+
+Minimal state to interface:
+  All control inputs listed above
+  Screen State
